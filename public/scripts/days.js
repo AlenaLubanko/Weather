@@ -54,13 +54,13 @@ cityWeather.addEventListener('change', async function () {
   let requestGetParams = `id=${getValue}&appid=${apiKey}`;
   console.log(getValue)
   const response = await fetch(`http://api.openweathermap.org/data/2.5/forecast?${requestGetParams}&lang=ru`)
-  const data = await response.json();
-  console.log(data);
+  const data = await response.json()
+  console.log(data)
   const nowDate = Date.now()
-  console.log(nowDate);
+  console.log(nowDate)
 
   const sunrise = new Date(data.city.sunrise * 1000);
-  const sunriseTime = (sunrise.getHours() < 10 ? "0" : "") + sunrise.getHours() + ":" + (sunrise.getMinutes() < 10 ? "0" : "") + sunrise.getMinutes() + ":" + (sunrise.getSeconds() < 10 ? "0" : "") + sunrise.getSeconds();
+  const sunriseTime = (sunrise.getHours() < 10 ? "0" : "") + sunrise.getHours() + ":" + (sunrise.getMinutes() < 10 ? "0" : "") + sunrise.getMinutes() + ":" + (sunrise.getSeconds() < 10 ? "0" : "") + sunrise.getSeconds()
   // console.log(sunriseTime);
 
 
@@ -73,8 +73,8 @@ document.getElementById('sunrise').innerText = `Время рассвета: ${s
 
 
   const dateFor = (nowDate + 86400000) / 1000;
-  const dateArray = [];
-  const tempArray = [];
+  const dateArray = []
+  const tempArray = []
   for (let i = 0; i < data.list.length; i++) {
     if (dateFor > data.list[i].dt) {
       dateArray.push(data.list[i].dt_txt)
@@ -95,26 +95,26 @@ document.getElementById('sunrise').innerText = `Время рассвета: ${s
   if (getValue === '472459') {
     const element = myHBS({ city: 'vol' })
     document.getElementById('carousel').innerHTML = element
-    const elems = document.querySelectorAll('.carousel');
-    const instances = M.Carousel.init(elems);
+    const elems = document.querySelectorAll('.carousel')
+    const instances = M.Carousel.init(elems)
   }
   if (getValue === '524894') {
     const element = myHBS({ city: 'mos' })
     document.getElementById('carousel').innerHTML = element
-    const elems = document.querySelectorAll('.carousel');
-    const instances = M.Carousel.init(elems);
+    const elems = document.querySelectorAll('.carousel')
+    const instances = M.Carousel.init(elems)
   }
   if (getValue === '498817') {
     const element = myHBS({ city: 'sankt' })
     document.getElementById('carousel').innerHTML = element
-    const elems = document.querySelectorAll('.carousel');
-    const instances = M.Carousel.init(elems);
+    const elems = document.querySelectorAll('.carousel')
+    const instances = M.Carousel.init(elems)
   }
   if (getValue === '491422') {
     const element = myHBS({ city: 'sochi' })
     document.getElementById('carousel').innerHTML = element
-    const elems = document.querySelectorAll('.carousel');
-    const instances = M.Carousel.init(elems);
+    const elems = document.querySelectorAll('.carousel')
+    const instances = M.Carousel.init(elems)
   }
 
   const oneDay = await fetch(`https://api.openweathermap.org/data/2.5/weather?${requestGetParams}&lang=ru`);
@@ -130,6 +130,7 @@ document.getElementById('sunrise').innerText = `Время рассвета: ${s
 
 
   const ctx = document.getElementById('myChart');
+
   // console.log(ctx);
   ctx.height = 150;
   const myChart = new Chart(ctx, {
@@ -140,7 +141,7 @@ document.getElementById('sunrise').innerText = `Время рассвета: ${s
         label: 'Температура',
         data: tempArray,
         backgroundColor: 'rgba(255, 99, 132, 0.2)',
-        borderColor: 'rgba(255, 99, 132, 1)',
+        borderColor: '#004d40',
         borderWidth: 1,
         fill: false
       }]
@@ -150,17 +151,9 @@ document.getElementById('sunrise').innerText = `Время рассвета: ${s
         // Change options for ALL labels of THIS CHART
         datalabels: {
           align: 'top',
-          color: '#36A2EB'
+          color: '#004d40 '
         }
       },
-      // data: {
-      //   datasets: [{
-      //     // Change options only for labels of THIS DATASET
-      //     datalabels: {
-      //       color: '#FFCE56'
-      //     }
-      //   }]
-      // },
       scales: {
         yAxes: [{
           ticks: {
@@ -172,7 +165,12 @@ document.getElementById('sunrise').innerText = `Время рассвета: ${s
             lineHeight: this.normalize
           }
         }]
+      },
+      gridLines: {
+        display: false,
+        drawTicks: false,
       }
     }
   })
+  // document.getElementById('container').innerHTML = myChart
 })
