@@ -132,7 +132,7 @@ document.getElementById('sunrise').innerText = `Время рассвета: ${s
   const ctx = document.getElementById('myChart');
 
   // console.log(ctx);
-  ctx.height = 150;
+  // ctx.height = 150;
   const myChart = new Chart(ctx, {
     type: 'line',
     data: {
