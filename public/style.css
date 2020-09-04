@@ -1,0 +1,10 @@
+
+.carousel .carousel-item>img {
+    width: 230%;
+    margin-left: -70%; 
+}
+
+body {
+    background-color: #e0f2f1;
+  }
+    

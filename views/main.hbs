@@ -1,0 +1,53 @@
+<script defere src="./scripts/client.js"></script>
+
+<div id='greeting' class='greeting shadowtext'></div>
+
+
+<div>
+    <div>
+        <select class='cities' id="city">
+            <option>Выберите город из списка ниже:</option>
+            <option id='Vologda' value='472459'>Вологда</option>
+            <option id='Moscow' value='524894'>Москва</option>
+            <option id='Petersburg' value='498817'>Санкт-Петербург</option>
+            <option id='Sochi' value='491422'>Сочи</option>
+        </select>
+
+
+        <h1>Погода сейчас:</h1>
+
+        <div class='wrapper'>
+            <div class='container white'>
+                <p class='icon' id='icon'></p>
+            </div>
+            <div class='container'>
+                <h3>Наличие / отсутствие облаков, дождя:</h3>
+                <hr class="hr-horizontal-gradient">
+                <p id='weather'></p>
+            </div>
+            <div class='container center temper'>
+                <h3 class='temper'>Температура:</h3>
+                <hr class="hr-horizontal-gradient">
+                <p id='tem'>&deg;</p>
+            </div>
+            <div class='container center'>
+                <h3>Ощущается как:</h3>
+                <hr class="hr-horizontal-gradient">
+                <p id='feel'>&deg;</p>
+            </div>
+            <div class='container center'>
+                <h3>Скорость ветра:</h3>
+                <hr class="hr-horizontal-gradient">
+                <p id='wind'>м/с</p>
+            </div>
+
+        </div>
+        <div>
+            {{!-- <script type="text/javascript" src="http://theoldreader.com/kittens/600/400/js"></script> --}}
+        </div>
+        <script src='https://api.thecatapi.com/v1/images/search'></script>
+        <footer class='footer'>
+            Погода предоставлена сервисом
+            <a href="https://openweathermap.org" title="Openweathermap" target="_blank"
+                rel="nofollow"><br>Openweathermap</a>
+        </footer>

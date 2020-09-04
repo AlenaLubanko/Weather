@@ -1,0 +1,63 @@
+<script defer src="./scripts/days.js"></script>
+<script defer src="./scripts/data.js"></script>
+<script defer src="./scripts/quote.js"></script>
+
+<nav>
+    <div class="nav-wrapper teal darken-2">
+        <div class="row">
+            <div width="100%">
+            <span class="flow-text" id="greeting"></span>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<select class='cities' id="cityWeather">
+    <option>Выберите город из списка ниже:</option>
+    <option id='Vologda' value='472459'>Вологда</option>
+    <option id='Moscow' value='524894'>Москва</option>
+    <option id='Petersburg' value='498817'>Санкт-Петербург</option>
+    <option id='Sochi' value='491422'>Сочи</option>
+</select>
+
+<div class="carousel" id="carousel">
+    <img id="imgCar" src="./img/priroda.jpg" width="100%" height="100%">
+</div>
+
+
+<h3>Погода:</h3>
+
+<ul class="collapsible popout ">
+    <li>
+        <div class="collapsible-header teal lighten-4"><i class="material-icons">title</i>Температура</div>
+        <div class="collapsible-body"><span id="temper"></span></div>
+    </li>
+    <li>
+        <div class="collapsible-header teal lighten-3"><i class="material-icons">filter_drama</i>Наличие / отсутствие облаков, дождя</div>
+        <div class="collapsible-body light-blue accent-1"><span id="icon"></span></div>
+    </li>
+    <li>
+        <div class="collapsible-header teal lighten-2"><i class="material-icons">arrow_forward</i>Скорость ветра</div>
+        <div class="collapsible-body"><span id="wind"></span></div>
+    </li>
+    <li>
+        <div class="collapsible-header teal lighten-1"><i class="material-icons">arrow_forward</i>Время заката / рассвета</div>
+        <div class="collapsible-body"><span id="sunrise"></span></div>
+    </li>
+</ul>
+
+<canvas id="myChart" width="400" height="400"></canvas>
+
+<div class="fixed-action-btn ">
+    <a id="menu" class="btn-floating btn-large teal darken-4" href="#">
+        <i class="large material-icons">
+            sentiment_very_satisfied</i>
+    </a>
+</div>
+<div class="tap-target teal darken-1" data-target="menu">
+    <div class="tap-target-content">
+        <h5 class="white-text">Цитата дня:</h5>
+        <p class="white-text" id="news"></p>
+    </div>
+</div>
+
