@@ -17,10 +17,6 @@ document.addEventListener('DOMContentLoaded', function () {
   var instances = M.FormSelect.init(elems);
 });
 
-// document.addEventListener('DOMContentLoaded', function () {
-//   var elems = document.querySelectorAll('.collapsible');
-//   var instances = M.Collapsible.init(elems);
-// });
 
 document.getElementById('menu').addEventListener('click', async function () {
   const response = await fetch("https://api.paperquotes.com/apiv1/quotes/?lang=ru", {
